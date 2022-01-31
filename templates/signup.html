@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/minstyle.io@1.1.0/css/minstyle.io.css"
+    />
+  </head>
+  <body style="margin: auto; width: 50%">
+    {% if is_signup %}
+    <h1>submmited successfully</h1>
+    <a href="/account/login/">login here</a>
+
+    {% else %}
+    <h1>signup</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+      <input
+        style="padding: 8px; margin: 8px"
+        type="text"
+        name="user"
+        placeholder="username"
+      />
+      <br />
+      <input
+        style="padding: 8px; margin: 8px"
+        type="password"
+        name="pass"
+        placeholder="password"
+      />
+      <br />
+      <input
+        style="padding: 8px; margin: 8px"
+        type="text"
+        name="fn"
+        placeholder="firstname"
+      /><br />
+      <input
+        style="padding: 8px; margin: 8px"
+        type="text"
+        name="ln"
+        placeholder="lastname"
+      /><br />
+
+      <input type="submit" />
+    </form>
+
+    <div><a href="/">homepage</a></div>
+
+    {% endif %}
+  </body>
+</html>
